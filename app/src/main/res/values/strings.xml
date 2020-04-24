@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RedStone</string>
+    <string name="add">Добавить</string>
+    <string name="cancel">Отменить</string>
+</resources>
