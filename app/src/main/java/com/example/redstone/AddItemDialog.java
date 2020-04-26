@@ -8,6 +8,7 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +16,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
 public class AddItemDialog extends DialogFragment {
+
+    public final static String BUNDLE = "Bundle";
+    ProductInfo productInfo = null;
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -27,14 +31,32 @@ public class AddItemDialog extends DialogFragment {
                 weightEt = view.findViewById(R.id.weightEt),
                 valueEt = view.findViewById(R.id.valueEt);
 
-        builder.setPositiveButton(R.string.add, new DialogInterface.OnClickListener() {
+        String text = getResources().getString(R.string.add);
+
+        if (getArguments() != null){
+            productInfo = (ProductInfo) getArguments().getSerializable(BUNDLE);
+            if (productInfo != null) {
+                productEt.setText(productInfo.getName());
+                weightEt.setText(String.valueOf(productInfo.getWeight()));
+                valueEt.setText(String.valueOf(productInfo.getValue()));
+                text = "сохранить";
+            }
+        }
+
+        builder.setPositiveButton(text, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 MainActivity mainActivity = (MainActivity) getActivity();
-                if (mainActivity != null)
+                if (mainActivity != null && productInfo == null)
                     mainActivity.addProduct(productEt.getText().toString(),
                             Integer.parseInt(weightEt.getText().toString()),
                             Integer.parseInt(valueEt.getText().toString()));
+                else if (productInfo != null){
+                    productInfo.setName(productEt.getText().toString());
+                    productInfo.setWeight(Integer.parseInt(weightEt.getText().toString()));
+                    productInfo.setValue(Integer.parseInt(valueEt.getText().toString()));
+                    Toast.makeText(getContext(), "Изменения сохранены", Toast.LENGTH_SHORT).show();
+                }
                 dismiss();
             }
         });

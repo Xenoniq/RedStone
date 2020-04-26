@@ -1,6 +1,8 @@
 package com.example.redstone;
 
-public class ProductInfo {
+import java.io.Serializable;
+
+public class ProductInfo implements Serializable {
     private String name;
     private int weight, value;
 
