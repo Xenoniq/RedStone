@@ -3,7 +3,7 @@ package com.example.redstone;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
@@ -25,14 +25,17 @@ public class MainActivity extends AppCompatActivity {
     ListAdapter<ProductInfo> productInfoListAdapter;
     DBServer dbServer;
     DBServer.Products products;
+    public int max_weight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         dbServer = new DBServer(this);
         products = dbServer.new Products();
-
+        Bundle arguments = getIntent().getExtras();
+        if (arguments != null) {
+            max_weight = arguments.getInt("maxWeight");
+        }
         addBt = findViewById(R.id.addBt);
         toStaffBt = findViewById(R.id.toStaffBt);
         if (!fillProductsArray())
@@ -84,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         boolean ok = productsArr.add(new ProductInfo(name, weight, value));
         if (ok) {
             productInfoListAdapter.notifyDataSetChanged();
-            Toast.makeText(this, "Продукт добавлен", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.products_added, Toast.LENGTH_SHORT).show();
         }
         return ok;
     }
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OptimizationTask.toStuff(productsArr);
+                OptimizationTask.toStuff(productsArr, max_weight);
                 productInfoListAdapter.notifyDataSetChanged();
             }
         };
@@ -120,5 +123,17 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         saveArraysInDb();
     }
+//    //Системная кнопка назад - начало
+//    @Override
+//    public void onBackPressed() {
+//        try {
+//            Intent intent = new Intent(MainActivity.this, IntroActivity.class);
+//            startActivity(intent);
+//            finish();
+//        } catch (Exception e) {
+//
+//        }
+//    }
+//    //Сиситемная кнопка назад - конец
 
 }

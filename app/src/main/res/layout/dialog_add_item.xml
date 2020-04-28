@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Название товара"
+        android:hint="@string/hintName"
         android:inputType="textPersonName" />
 
     <EditText
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Вес"
+        android:hint="@string/hintWeight"
         android:inputType="textPersonName" />
 
     <EditText
@@ -26,6 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Количество"
+        android:hint="@string/hintPrice"
         android:inputType="textPersonName" />
 </LinearLayout>

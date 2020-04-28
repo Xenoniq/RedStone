@@ -2,4 +2,19 @@
     <string name="app_name">RedStone</string>
     <string name="add">Добавить</string>
     <string name="cancel">Отменить</string>
+    <string name="changes_saved">Изменения сохранены</string>
+    <string name="products_added">Продукт добавлен</string>
+    <string name="save">Сохранить</string>
+    <string name="firtStep">Укажите парамтры корабля\n(Максимальный перевозимый вес)</string>
+    <string name="secondStep">Введите условия миссии\n(Минимальную стоимость продуктов)</string>
+    <string name="thirdStep">Введите  список товаров и их характеристики\nРасчитайте самую выгодную комплектацию</string>
+    <string name="hintName">Название товара</string>
+    <string name="hintWeight">Вес</string>
+    <string name="hintPrice">Стоимость</string>
+    <string name="next">Далее</string>
+    <string name="back">Назад</string>
+    <string name="start">Начать</string>
+    <string name="enterWeight">Введите максимальный вес\n(в тоннах)</string>
+    <string name="enterPrice">Введите минимальную стоимость(в красных камнях)</string>
+    <string name="max_weight">Максимальный вес</string>
 </resources>

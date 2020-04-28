@@ -2,5 +2,14 @@
 <resources>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#ED8554</color>
+    <color name="purpleMain">#5F236B</color>
+    <color name="redMain">#BE375F</color>
+    <color name="yellowMain">#F5EB6D</color>
+    <color name="orangeMain">#ED8554</color>
+    <color name="orangeLight">#8FE4875B</color>
+    <color name="background">#0D122E</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+
 </resources>

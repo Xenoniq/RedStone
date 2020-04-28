@@ -39,7 +39,7 @@ public class AddItemDialog extends DialogFragment {
                 productEt.setText(productInfo.getName());
                 weightEt.setText(String.valueOf(productInfo.getWeight()));
                 valueEt.setText(String.valueOf(productInfo.getValue()));
-                text = "сохранить";
+                text = getString(R.string.save);
             }
         }
 
@@ -55,7 +55,7 @@ public class AddItemDialog extends DialogFragment {
                     productInfo.setName(productEt.getText().toString());
                     productInfo.setWeight(Integer.parseInt(weightEt.getText().toString()));
                     productInfo.setValue(Integer.parseInt(valueEt.getText().toString()));
-                    Toast.makeText(getContext(), "Изменения сохранены", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.changes_saved, Toast.LENGTH_SHORT).show();
                 }
                 dismiss();
             }
