@@ -96,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OptimizationTask.toStuff(productsArr, max_weight);
+
+                OptimizationTask.toStuff(productsArr,max_weight);
                 productInfoListAdapter.notifyDataSetChanged();
             }
         };
@@ -123,17 +124,17 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         saveArraysInDb();
     }
-//    //Системная кнопка назад - начало
-//    @Override
-//    public void onBackPressed() {
-//        try {
-//            Intent intent = new Intent(MainActivity.this, IntroActivity.class);
-//            startActivity(intent);
-//            finish();
-//        } catch (Exception e) {
-//
-//        }
-//    }
-//    //Сиситемная кнопка назад - конец
+    //Системная кнопка назад - начало
+    @Override
+    public void onBackPressed() {
+        try {
+            Intent intent = new Intent(MainActivity.this, IntroActivity.class);
+            startActivity(intent);
+            finish();
+        } catch (Exception e) {
+
+        }
+    }
+    //Сиситемная кнопка назад - конец
 
 }
