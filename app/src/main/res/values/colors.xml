@@ -5,10 +5,12 @@
     <color name="colorAccent">#ED8554</color>
     <color name="purpleMain">#5F236B</color>
     <color name="redMain">#BE375F</color>
+    <color name="redLight">#68D33B68</color>
     <color name="yellowMain">#F5EB6D</color>
     <color name="orangeMain">#ED8554</color>
-    <color name="orangeLight">#8FE4875B</color>
-    <color name="background">#0D122E</color>
+    <color name="orangeLight">#6FE4875B</color>
+    <color name="background">#1B1B1C</color>
+    <color name="dialog">#EB27272B</color>
     <color name="colorWhite">#FFFFFF</color>
 
 

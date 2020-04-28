@@ -27,13 +27,13 @@
         android:layout_width="wrap_content"
         android:layout_height="39dp"
         android:layout_below="@+id/slidePage"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="164dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="35dp"
-        android:layout_marginEnd="164dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="1dp"
+        android:layout_toStartOf="@+id/nextBut"
+        android:layout_toEndOf="@+id/backBut"
         android:orientation="horizontal">
 
     </LinearLayout>

@@ -17,4 +17,11 @@
     <string name="enterWeight">Введите максимальный вес\n(в тоннах)</string>
     <string name="enterPrice">Введите минимальную стоимость(в красных камнях)</string>
     <string name="max_weight">Максимальный вес</string>
+    <string name="error_dialog">Миссия невозможна, стоимость товаров меньше минимальной</string>
+    <string name="close">Закрыть</string>
+    <string name="minPrice">Минимальная стоимость</string>
+    <string name="addProduct">+</string>
+    <string name="complect">Укомплектовать</string>
+    <string name="stones">Камней</string>
+    <string name="weight">Тонн</string>
 </resources>

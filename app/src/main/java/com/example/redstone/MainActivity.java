@@ -3,12 +3,17 @@ package com.example.redstone;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
@@ -24,17 +29,44 @@ public class MainActivity extends AppCompatActivity {
     ListView productLw;
     ListAdapter<ProductInfo> productInfoListAdapter;
     DBServer dbServer;
+    Dialog dialogError;
     DBServer.Products products;
     public int max_weight;
+    public int min_price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Диалоговое окно ошибка - нач
+        dialogError = new Dialog(this);
+        dialogError.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogError.setContentView(R.layout.error_dialog);
+        dialogError.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialogError.setCancelable(false);
+        Button but_close = (Button)dialogError.findViewById(R.id.butclose);
+            but_close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    try {
+                        dialogError.dismiss();
+                    }catch (Exception e){
+
+                    }
+                }
+            });
+
+        //Диалоговое окно ошибка - кц
+
         dbServer = new DBServer(this);
         products = dbServer.new Products();
-        Bundle arguments = getIntent().getExtras();
-        if (arguments != null) {
-            max_weight = arguments.getInt("maxWeight");
+        Bundle aWeight = getIntent().getExtras();
+        if (aWeight != null) {
+            max_weight = aWeight.getInt("maxWeight");
+        }
+        Bundle aPrice = getIntent().getExtras();
+        if (aPrice != null) {
+            min_price = aPrice.getInt("minPrice");
         }
         addBt = findViewById(R.id.addBt);
         toStaffBt = findViewById(R.id.toStaffBt);
@@ -96,9 +128,13 @@ public class MainActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(OptimizationTask.toStuff(productsArr,max_weight,min_price) != null){
+                    productInfoListAdapter.notifyDataSetChanged();
+                }
+                else {
+                    dialogError.show();
+                }
 
-                OptimizationTask.toStuff(productsArr,max_weight);
-                productInfoListAdapter.notifyDataSetChanged();
             }
         };
     }

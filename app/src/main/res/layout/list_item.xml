@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/error_button_slyle"
+    android:paddingEnd="10dp"
+    android:layout_margin="10dp"
+    >
 
     <TextView
         android:id="@+id/productTw"
         android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:textSize="15dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:textColor="@color/yellowMain"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/weightTw"
         android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:textSize="15dp"
+        android:textColor="@color/yellowMain"
         android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_weight="1"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/valueTw"
         android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:textSize="15dp"
+        android:textColor="@color/yellowMain"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="TextView" />

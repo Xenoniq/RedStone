@@ -1,11 +1,14 @@
 package com.example.redstone;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
     public class OptimizationTask {
     public static Integer maxProfit = 0;
-    static ArrayList<ProductInfo> toStuff(ArrayList<ProductInfo> products, int max_weight){
+    boolean price;
+    static ArrayList<ProductInfo> toStuff(ArrayList<ProductInfo> products, int max_weight, int min_price) {
         int[][] table = new int[products.size() + 1][max_weight + 1];
 
         for (int j = 0; j < max_weight + 1; j++) {
@@ -31,10 +34,18 @@ import java.util.Iterator;
             if (table[i][j] == table[i - 1][j])
                 products.remove(i - 1);
             else
-                j -= products.get(i-1).getWeight();
+                j -= products.get(i - 1).getWeight();
         }
 
         maxProfit = table[products.size()][max_weight];
-        return products;
+
+        if (maxProfit < min_price) {
+            return products;
+        } else {
+            return null;
+        }
     }
+
+
+
 }
