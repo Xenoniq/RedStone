@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -27,6 +28,8 @@ public class AddItemDialog extends DialogFragment {
         View view = inflater.inflate(R.layout.dialog_add_item, null);
         builder.setView(view);
 
+
+
         final EditText productEt = view.findViewById(R.id.productEt),
                 weightEt = view.findViewById(R.id.weightEt),
                 valueEt = view.findViewById(R.id.valueEt);
@@ -42,8 +45,8 @@ public class AddItemDialog extends DialogFragment {
                 text = getString(R.string.save);
             }
         }
-
         builder.setPositiveButton(text, new DialogInterface.OnClickListener() {
+
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 MainActivity mainActivity = (MainActivity) getActivity();

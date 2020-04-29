@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     DBServer dbServer;
     Dialog dialogError;
     DBServer.Products products;
-    public int max_weight;
-    public int min_price;
+    public static int max_weight;
+    public static int min_price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
             but_close.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     try {
                         dialogError.dismiss();
                     }catch (Exception e){

@@ -44,4 +44,5 @@
         android:padding="10dp"
         android:hint="@string/hintPrice"
         android:inputType="number" />
+
 </LinearLayout>

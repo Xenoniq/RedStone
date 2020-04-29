@@ -4,6 +4,8 @@
     <string name="cancel">Отменить</string>
     <string name="changes_saved">Изменения сохранены</string>
     <string name="products_added">Продукт добавлен</string>
+    <string name="error_weight">Недопустимый вес</string>
+    <string name="error_price">Недопустимая стоимость</string>
     <string name="save">Сохранить</string>
     <string name="firtStep">Укажите парамтры корабля\n(Максимальный перевозимый вес)</string>
     <string name="secondStep">Введите условия миссии\n(Минимальную стоимость продуктов)</string>
