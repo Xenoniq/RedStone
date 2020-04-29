@@ -6,7 +6,7 @@
         <item name="colorPrimary">#BE375F</item>
         <item name="colorPrimaryDark">@color/dialog</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">@color/yellowMain</item>
+        <item name="android:textColor">@color/redMain</item>
         <item name="android:itemBackground">@color/dialog</item>
     </style>
 

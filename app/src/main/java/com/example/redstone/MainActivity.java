@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     DBServer dbServer;
     Dialog dialogError;
     DBServer.Products products;
-    public static int max_weight;
-    public static int min_price;
+    public int max_weight;
+    public int min_price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,14 +59,13 @@ public class MainActivity extends AppCompatActivity {
 
         dbServer = new DBServer(this);
         products = dbServer.new Products();
-        Bundle aWeight = getIntent().getExtras();
-        if (aWeight != null) {
-            max_weight = aWeight.getInt("maxWeight");
+
+        Bundle arg = getIntent().getExtras();
+        if (arg != null) {
+            max_weight = arg.getInt("maxWeight");
+            min_price = arg.getInt("minPrice");
         }
-        Bundle aPrice = getIntent().getExtras();
-        if (aPrice != null) {
-            min_price = aPrice.getInt("minPrice");
-        }
+
         addBt = findViewById(R.id.addBt);
         toStaffBt = findViewById(R.id.toStaffBt);
         if (!fillProductsArray())

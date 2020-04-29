@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
     public class OptimizationTask {
-    public static Integer maxProfit = 0;
+    public static int maxProfit = 0;
     static ArrayList<ProductInfo> toStuff(ArrayList<ProductInfo> products, int max_weight, int min_price) {
         int[][] table = new int[products.size() + 1][max_weight + 1];
 
@@ -38,10 +38,10 @@ import java.util.Iterator;
 
         maxProfit = table[products.size()][max_weight];
 
-        if (maxProfit >= min_price) {
-            return products;
-        } else {
+        if (maxProfit < min_price) {
             return null;
+        } else {
+            return products;
         }
     }
 
