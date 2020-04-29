@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/dialogfon"
+    android:background="@color/dialog"
+    android:layout_gravity="center"
+    android:scaleType="centerCrop"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/error"
+        android:padding="10dp"
+        android:layout_width="311dp"
+        android:layout_height="201dp"
+        android:layout_weight="7"
+        app:srcCompat="@drawable/error" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:id="@+id/textdescr"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="20"
+            android:gravity="center"
+            android:text="@string/error_dialog"
+            android:textColor="@color/yellowMain"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/butclose"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:background="@drawable/error_button_slyle"
+            android:padding="10dp"
+            android:text="@string/close"
+            android:textColor="@color/yellowMain"
+            android:textStyle="bold">
+
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>
