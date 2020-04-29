@@ -10,7 +10,12 @@
         android:id="@+id/productEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/error_button_slyle"
+        android:textColor="@color/yellowMain"
+        android:textColorHint="@color/yellowLight"
+        android:padding="10dp"
         android:ems="10"
+        android:layout_margin="5dp"
         android:hint="@string/hintName"
         android:inputType="textPersonName" />
 
@@ -18,15 +23,25 @@
         android:id="@+id/weightEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/error_button_slyle"
+        android:textColor="@color/yellowMain"
+        android:textColorHint="@color/yellowLight"
+        android:padding="10dp"
         android:ems="10"
+        android:layout_margin="5dp"
         android:hint="@string/hintWeight"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/valueEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_margin="5dp"
+        android:background="@drawable/error_button_slyle"
+        android:textColor="@color/yellowMain"
+        android:textColorHint="@color/yellowLight"
+        android:padding="10dp"
         android:hint="@string/hintPrice"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 </LinearLayout>

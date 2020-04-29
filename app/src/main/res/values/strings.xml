@@ -24,4 +24,6 @@
     <string name="complect">Укомплектовать</string>
     <string name="stones">Камней</string>
     <string name="weight">Тонн</string>
+    <string name="edit">Редактировать</string>
+    <string name="delete">Удалить</string>
 </resources>
