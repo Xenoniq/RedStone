@@ -1,13 +1,9 @@
 package com.example.redstone;
-
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -45,8 +41,8 @@ public class AddItemDialog extends DialogFragment {
                 text = getString(R.string.save);
             }
         }
-        builder.setPositiveButton(text, new DialogInterface.OnClickListener() {
 
+        builder.setPositiveButton(text, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 MainActivity mainActivity = (MainActivity) getActivity();
@@ -69,6 +65,7 @@ public class AddItemDialog extends DialogFragment {
                 getDialog().cancel();
             }
         });
+
         return builder.create();
     }
 }
