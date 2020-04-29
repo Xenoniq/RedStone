@@ -20,13 +20,19 @@ public class EnterWeight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText maxWeightEt = (EditText)findViewById(R.id.maxWeight);
-                int maxWeight = Integer.parseInt(maxWeightEt.getText().toString());
-                    if(maxWeight > 0) {
-                        Intent intent = new Intent(EnterWeight.this, MainActivity.class);
-                        intent.putExtra("maxWeight", maxWeight);
+                try {
+                    int maxWeight = Integer.parseInt(maxWeightEt.getText().toString());
+                    if (maxWeight > 0) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("maxWeight", maxWeight);
                         Intent i = new Intent(EnterWeight.this, EnterPrice.class);
-                        startActivity(i);finish();
-                } else {
+                        i.putExtras(bundle);
+                        startActivity(i);
+                        finish();
+                    } else {
+                        errorWeight.show();
+                    }
+                } catch (NumberFormatException e) {
                     errorWeight.show();
                 }
             }

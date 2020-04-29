@@ -21,14 +21,25 @@ public class EnterPrice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText minPriceEt = (EditText)findViewById(R.id.minPrice);
-                int minPrice = Integer.parseInt(minPriceEt.getText().toString());
-                    if(minPrice > 0) {
+                try {
+                    int minPrice = Integer.parseInt(minPriceEt.getText().toString());
+                    if (minPrice > 0) {
                         Intent intent = new Intent(EnterPrice.this, MainActivity.class);
-                        intent.putExtra("minPrice", minPrice);
-                        startActivity(intent);finish();
-                } else {
+                        Bundle bundle = null;
+                        if (getIntent().getExtras() != null && !getIntent().getExtras().isEmpty())
+                            bundle = getIntent().getExtras();
+                        else
+                            bundle = new Bundle();
+                        bundle.putInt("minPrice", minPrice);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                        finish();
+                    } else {
                         errorPrice.show();
                     }
+                } catch (NumberFormatException e) {
+                    errorPrice.show();
+                }
 
             }
         });

@@ -29,6 +29,8 @@ import java.util.Iterator;
             }
         }
 
+        maxProfit = table[products.size()][max_weight];
+
         for (int i = products.size(), j = max_weight; i > 0; i--) {
             if (table[i][j] == table[i - 1][j])
                 products.remove(i - 1);
@@ -36,7 +38,7 @@ import java.util.Iterator;
                 j -= products.get(i - 1).getWeight();
         }
 
-        maxProfit = table[products.size()][max_weight];
+
 
         if (maxProfit < min_price) {
             return null;

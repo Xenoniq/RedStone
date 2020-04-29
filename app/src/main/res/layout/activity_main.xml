@@ -11,13 +11,15 @@
     <ListView
         android:id="@+id/productLw"
         android:layout_width="366dp"
-        android:layout_height="536dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ListView>
 
@@ -26,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,10 +38,10 @@
             android:id="@+id/addBt"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/error_button_slyle"
             android:text="@string/addProduct"
             android:textColor="@color/yellowMain"
@@ -50,11 +53,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_red_slyle"
             android:padding="15dp"
+            android:text="@string/complect"
             android:textColor="@color/redMain"
-            android:textStyle="bold"
-            android:text="@string/complect" />
+            android:textStyle="bold" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

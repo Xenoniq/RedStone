@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
     DBServer dbServer;
     Dialog dialogError;
     DBServer.Products products;
-    public int max_weight;
-    public int min_price;
+    public Integer max_weight, min_price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(OptimizationTask.toStuff(productsArr,max_weight,min_price) != null){
                     productInfoListAdapter.notifyDataSetChanged();
+                    Toast.makeText(MainActivity.this,
+                            "Укомплектовано", Toast.LENGTH_LONG).show();
                 }
                 else {
                     dialogError.show();

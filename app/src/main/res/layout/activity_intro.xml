@@ -61,7 +61,7 @@
         android:layout_marginBottom="7dp"
         android:background="#00FFFFFF"
         android:text="@string/back"
-        android:textColor="@color/orangeMain"
+        android:textColor="@color/dialog"
         android:visibility="invisible" />
 
 </RelativeLayout>
