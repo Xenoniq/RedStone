@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         try {
-            Intent intent = new Intent(MainActivity.this, IntroActivity.class);
+            Intent intent = new Intent(MainActivity.this, EnterPrice.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {
