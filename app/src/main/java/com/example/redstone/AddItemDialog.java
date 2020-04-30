@@ -84,8 +84,11 @@ public class AddItemDialog extends DialogFragment {
                     dialogWindow.getWindow().setBackgroundDrawableResource(R.color.dialog);
                 // достаем кнопку
                 Button b = dialogWindow.getButton(DialogInterface.BUTTON_POSITIVE);
+                Button c = dialogWindow.getButton(DialogInterface.BUTTON_NEGATIVE);
                 // красим кнопку в цвет
-                b.setBackgroundColor(getResources().getColor(R.color.orangeMain));
+                c.setBackgroundColor(getResources().getColor(R.color.redLight));
+                b.setBackgroundColor(getResources().getColor(R.color.yellowLight));
+                b.setTextColor(getResources().getColor(R.color.yellowMain));
             }
         });
         return dialogWindow;
