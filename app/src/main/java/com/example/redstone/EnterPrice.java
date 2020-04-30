@@ -68,4 +68,3 @@ public class EnterPrice extends AppCompatActivity {
     }
     //Сиситемная кнопка назад - конец
 }
-
