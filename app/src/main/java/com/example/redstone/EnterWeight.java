@@ -40,7 +40,6 @@ public class EnterWeight extends AppCompatActivity {
 
     }
 
-
     //Системная кнопка назад - начало
     @Override
     public void onBackPressed() {
